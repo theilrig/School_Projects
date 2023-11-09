@@ -3,10 +3,12 @@ def main():
     user_responses = questions()
     save_to_file(user_responses)
 
+#This is a function that takes in as many user inputs used to downlaod
 def questions():   
     user_responses = {}
     user_responses['name'] = input("Como te llamas: ")
     user_responses['age'] = int(input("Cuántos años tiene: "))
+    #This split in the code changes inputs based on who is answering making the answers interactive and dependent on user 
     if user_responses['age'] >= 18: 
         user_responses['job'] = input("Cuál es tu ocupación: ")
         user_responses['marriage'] = input("Tienes una esposa S or N: ")
@@ -21,7 +23,7 @@ def questions():
     user_responses['spammerOpinion'] = input("¿Qué opinas de los estafadores en línea?: ")
     
     return user_responses
-
+#This function downloads the user responses to local files 
 def save_to_file(user_responses):
     with open(r'C:\Users\P6\Downloads\user_interview_responses.txt', 'w') as file:
         for key, value in user_responses.items():
